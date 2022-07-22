@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  id: Int!
+  text: String!
+  isCompleted: Boolean!
+  project: Project!
+  projectTitle: String!
+}
+
+type Project {
+  id: Float!
+  title: String!
+  todos: [Todo!]
+}
+
+type Query {
+  getAllProjects: [Project!]!
+  getAllTodos: [Todo!]!
+  todo(id: Float!): Todo!
+}
+
+type Mutation {
+  createProject(project: ProjectCreateDTO!): Project!
+  createTodo(todo: CreateTodoInput!): Todo!
+  updateTodo(todo: UpdateTodoInput!): Todo!
+  removeTodo(id: Int!): Todo!
+}
+
+input ProjectCreateDTO {
+  title: String!
+}
+
+input CreateTodoInput {
+  text: String!
+  isCompleted: Boolean!
+  projectTitle: String!
+}
+
+input UpdateTodoInput {
+  text: String!
+  isCompleted: Boolean!
+  projectTitle: String
+  id: Float!
+}
