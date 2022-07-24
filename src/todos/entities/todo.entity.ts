@@ -28,7 +28,7 @@ export class Todo {
   @Field(() => Project)
   project: Project;
 
+  @Field(() => Int)
   @Column()
-  @Field()
-  projectTitle: string;
+  projectId: number;
 }

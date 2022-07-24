@@ -7,11 +7,11 @@ type Todo {
   text: String!
   isCompleted: Boolean!
   project: Project!
-  projectTitle: String!
+  projectId: Int!
 }
 
 type Project {
-  id: Float!
+  id: Int!
   title: String!
   todos: [Todo!]
 }
@@ -36,12 +36,12 @@ input ProjectCreateDTO {
 input CreateTodoInput {
   text: String!
   isCompleted: Boolean!
-  projectTitle: String!
+  projectId: Int!
 }
 
 input UpdateTodoInput {
   text: String!
   isCompleted: Boolean!
-  projectTitle: String
+  projectId: Int
   id: Float!
 }
